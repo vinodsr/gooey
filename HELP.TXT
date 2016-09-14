@@ -1,0 +1,91 @@
+
+Gooey v 1.0 : The GUI Devlopment  Kit
+=====================================
+
+Documentation 
+=============
+	
+		The screen contains 3 sections 
+		
+		1 . Menu
+		2 . Toolbox
+		3 . Design Area
+		
+
+	Choose new from file menu .
+        Click a control from the toolbox 
+	      and place it on the design form. 
+        To edit its properties just 
+	      right click it. 
+        To change (window)"form" details right click on the 
+	     title bar.
+	
+USING TEXTBOX
+	Click to activate textbox ( mouse - hide) .. Esc - to quit from typing mode and activate Mouse
+
+        * You can open/save the form from the file menu ..
+	
+        * To generate code for the form goto Generate->Generate Code
+            You can choose the following options ..
+                ¯Virtual X & Y - The X,Y cordinates as seen in the
+                                 IDE.
+                ¯Help          - Help for options
+
+                     Warning: 
+                     ² Copy the gui folder and the
+                     ² EVGA.BGI file with the code
+                     ² generated.
+
+        * You can change the view from the View menu . The views available
+          are FOREGROUND and BACKGROUND.
+
+           ¯The FRAME and LINE controls works only in the BACKGROUND mode.
+
+        * Use ControlBrowser ( Tools->ControlBrowser ) to browse the controls
+          on the form (only Foreground controls).
+
+
+DATABASE SUPPORT
+²²²²²²²²²²²²²²²²
+
+    For implement database a DATABASE class is available ..
+    You have to do the implemetation on the code generated.
+    The steps to implement database are
+
+    1 . Create a object
+
+            database db;
+    2 . In the onload handler of the window add this code
+
+            db.setfile("mydata.db");  // the database file..
+            db.setfield("name",t_name); // Assign fields to textbox
+            db.setfield("age",t_age);  // t_name and t_age..
+            .  .
+            .  .
+            db.connect();         //Connects the database..
+    3 . In the close hanlder of the window add this code
+
+            db.commit();  // Write the buffer into the file.
+
+    4 . The member functions available are ..
+               ¯addrec()
+               ¯prevrec();
+               ¯nextrec();
+               ¯deleterec();
+               ¯updaterec();
+               ¯search(filed,value);
+
+               Detailed help about DATABASE is available @ the website
+                http://busytalk.com/gui
+===================================================================
+
+CREDICTS
+ßßßßßßßß
+        This is a minproject done by
+
+            ¯  Vinod S R ®
+                       &
+                       ¯ Suraj R ®
+
+
+For More details visit http://tenthstone.com/gui
